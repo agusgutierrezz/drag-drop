@@ -6,6 +6,12 @@ function Search(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     setItem(event.target.username.value);
+    // setTimeout(
+    //   function () {
+    //     setItem("");
+    //   }.bind(this),
+    //   3000
+    // );
   };
   return (
     <div>
