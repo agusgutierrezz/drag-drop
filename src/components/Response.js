@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Recipes from "./Recipes";
-
+import gif from "../gif.gif";
+import Search from "./Search";
 class Response extends Component {
   state = {
     items: [],
@@ -21,21 +22,13 @@ class Response extends Component {
         });
       });
   }
-
-  // handleClick(event) {
-  //   this.setState({ query: "" });
-  //   event.preventDefault();
-  // }
+  handleClick() {}
   render() {
     return (
       <div>
-        {!this.state.isLoaded && <h1>Loading...</h1>}
-        {this.state.active && (
-          <Recipes
-            items={this.state.items}
-            // handleClick={this.handleClick.bind(this)}
-          />
-        )}
+        {!this.state.isLoaded && <img src={gif} alt="gif" />}
+        {this.state.active && <Recipes items={this.state.items} />}
+        <button onClick={this.props.action}>Go back!</button>
       </div>
     );
   }
