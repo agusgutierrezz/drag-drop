@@ -23,10 +23,10 @@ function Search(props) {
         }}
       >
         <label>
-          Name:
+          What do you want to eat?
           <input type="text" name="username" ref={textInput} />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit">Go!</button>
       </form>
       {item && <Response action={handleClick} query={item} />}
     </div>

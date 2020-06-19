@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Poppins:wght@400;700&display=swap");
+$colors: (
+  primary: #472151,
+  secondary: #624185,
+  p-yellow: #ffa345,
+  pastel: #f2ad73,
+);
+
+$poppins: "Poppins", sans-serif;
+$pt: "PT Serif", serif;
+$desktop: 840px;
+@mixin desktop {
+  @media (min-width:#{$desktop}) {
+    @content;
+  }
+}
+$lDesktop: 1500px;
+@mixin lDesktop {
+  @media (min-width:#{$lDesktop}) {
+    @content;
+  }
+}
+body {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+
+  //   background-color: map-get($colors, p-yellow);
+  .landing-container {
+    height: 100vh;
+    display: block;
+    position: relative;
+    @include desktop {
+      background-color: map-get($colors, p-yellow);
+    }
+  }
+
+  .landing-container::after {
+    content: "";
+    background: url("./bg-photo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    @include desktop {
+      background-color: map-get($colors, p-yellow);
+    }
+  }
+  h1 {
+    margin: 0;
+    padding-top: 1rem;
+    font-family: $poppins;
+    color: map-get($colors, p-yellow);
+    font-size: 3rem;
+    text-align: center;
+    @include desktop {
+      color: map-get($colors, primary);
+
+      text-align: start;
+      width: 30%;
+      font-size: 4rem;
+      margin-left: 5rem;
+      padding-top: 2rem;
+    }
+    @include lDesktop {
+      margin-left: 10rem;
+      padding-top: 4rem;
+      font-size: 5rem;
+    }
+  }
+  p {
+    margin: 1em auto;
+    font-size: 1.5rem;
+    font-family: $pt;
+    text-align: center;
+    color: map-get($colors, pastel);
+    max-width: 80%;
+    font-weight: bold;
+    @include desktop {
+      color: map-get($colors, secondary);
+
+      font-size: 1.5rem;
+      text-align: start;
+      width: 30%;
+      margin-left: 5rem;
+    }
+    @include lDesktop {
+      margin-left: 10rem;
+      font-size: 2rem;
+    }
+  }
+  .photo-container {
+    display: none;
+    @include desktop {
+      background: url("./bg-photo.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: block;
+      width: 30rem;
+      height: 100vh;
+      position: absolute;
+      right: 0;
+    }
+  }
+  .text-container {
+    @include desktop {
+    }
+  }
+}
