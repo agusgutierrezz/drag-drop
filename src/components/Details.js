@@ -29,14 +29,18 @@ const Details = (props) => {
   let confort = getConfort(items).recipe;
   let healthy = getHealthy(items).recipe;
   return (
-    <div>
-      <div>
-        <h1>Receta sana {healthy.label}</h1>
-        <h1>Receta sana {healthy.digest[0].total}</h1>
-        <img src={healthy.image} alt="photo" />
-        <h1>Receta confort {confort.label}</h1>
-        <h1>Receta confort {confort.digest[0].total}</h1>
-        <img src={confort.image} alt="photo" />
+    <div className="details-container">
+      <div className="recipes">
+        <div className="healthy">
+          <h3>{healthy.label}</h3>
+          <img src={healthy.image} alt="photo" />
+        </div>
+        {/* <h3>Receta sana {healthy.digest[0].total}</h3> */}
+        <div className="confort">
+          <h3>{confort.label}</h3>
+          {/* <h3>Receta confort {confort.digest[0].total}</h3> */}
+          <img src={confort.image} alt="photo" />
+        </div>
       </div>
     </div>
   );

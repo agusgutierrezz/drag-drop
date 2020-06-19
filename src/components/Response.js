@@ -26,9 +26,11 @@ class Response extends Component {
   render() {
     return (
       <div>
+        <button id="goBack" onClick={this.props.action}>
+          Go back!
+        </button>
         {!this.state.isLoaded && <img src={gif} alt="gif" />}
         {this.state.active && <Recipes items={this.state.items} />}
-        <button onClick={this.props.action}>Go back!</button>
       </div>
     );
   }

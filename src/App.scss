@@ -25,6 +25,8 @@ body {
   position: relative;
   overflow: hidden;
   height: 100%;
+  background-color: map-get($colors, p-yellow);
+
   .landing-container {
     height: 100vh;
     display: block;
@@ -70,7 +72,7 @@ body {
     @include lDesktop {
       margin-left: 10rem;
       padding-top: 4rem;
-      font-size: 5rem;
+      font-size: 4rem;
     }
   }
   p {
@@ -83,7 +85,7 @@ body {
     font-weight: bold;
     @include desktop {
       color: map-get($colors, secondary);
-      font-size: 1.5rem;
+      font-size: 2rem;
       text-align: start;
       width: 40%;
       margin-left: 5rem;
@@ -91,7 +93,7 @@ body {
     }
     @include lDesktop {
       margin-left: 10rem;
-      font-size: 1rem;
+      font-size: 2rem;
     }
   }
   .photo-container {
@@ -116,202 +118,233 @@ body {
     bottom: 2rem;
     display: block;
     position: absolute;
-    background-color: rgba(242, 173, 115, 0.7);
-    left: 1.5rem;
-    border-radius: 10px;
-    padding: 1rem;
-    width: 70%;
-    margin: 1rem;
+
     @include desktop {
       width: 50%;
       left: 11rem;
-      bottom: 9rem;
+      bottom: 12rem;
     }
     @include desktop {
-      bottom: 3rem;
-    }
-    h4 {
-      font-family: $poppins;
-      color: map-get($colors, primary);
-      font-weight: bold;
-      margin: 0 auto;
-      display: block;
-      text-align: center;
-      @include desktop {
-        font-size: 1.5rem;
-      }
-    }
-    input,
-    button {
-      display: block;
-      border-radius: 10px;
-      border: 0;
-      padding: 0.5rem;
-      margin: 0 auto;
-    }
-    button {
-      background-color: map-get($colors, primary);
-      width: 8rem;
-      color: map-get($colors, p-yellow);
-      font-family: $poppins;
-      font-size: 1rem;
-      font-weight: bold;
+      bottom: 5rem;
     }
   }
 }
-// $black: #000000;
-// $cornflower-lilac: #ffaea9;
-// $salmon: #ff7b73;
-// $white: #ffffff;
-// $your-pink: #ffcccc;
-// .c-checkbox {
-//   display: none;
 
-//   &:checked + .c-formContainer {
-//     .c-form {
-//       width: 37.5em;
-//     }
+$black: #000000;
 
-//     .c-form__toggle {
-//       visibility: hidden;
-//       opacity: 0;
-//       transform: scale(0.7);
-//     }
+$white: #ffffff;
+$your-pink: #624185;
+.c-checkbox {
+  display: none;
 
-//     .c-form__input,
-//     .c-form__buttonLabel {
-//       transition: 0.2s 0.1s;
-//       visibility: visible;
-//       opacity: 1;
-//       transform: scale(1);
-//     }
-//   }
+  &:checked + .c-formContainer {
+    .c-form {
+      width: 20.5em;
+    }
 
-//   &:not(:checked),
-//   &:checked {
-//     + .c-formContainer .c-form__input:required:valid ~ .c-form__toggle::before {
-//       content: "Thank You! \1F60A";
-//     }
-//   }
+    .c-form__toggle {
+      visibility: hidden;
+      opacity: 0;
+      transform: scale(0.7);
+    }
 
-//   &:not(:checked) + .c-formContainer {
-//     .c-form__input:required:valid ~ .c-form__toggle {
-//       pointer-events: none;
-//       cursor: default;
-//     }
-//   }
-// }
+    .c-form__input,
+    .c-form__buttonLabel {
+      transition: 0.2s 0.1s;
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+      font-size: 1.5rem;
+    }
+  }
 
-// .c-formContainer,
-// .c-form,
-// .c-form__toggle {
-//   width: 20em;
-//   height: 6.25em;
-// }
+  &:not(:checked),
+  &:checked {
+    + .c-formContainer .c-form__input:required:valid ~ .c-form__toggle::before {
+      content: "Thank You! \1F60A";
+    }
+  }
 
-// .c-formContainer {
-//   position: relative;
-//   font-weight: 700;
-// }
+  &:not(:checked) + .c-formContainer {
+    .c-form__input:required:valid ~ .c-form__toggle {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+}
 
-// .c-form,
-// .c-form__toggle {
-//   position: absolute;
-//   border-radius: 6.25em;
-//   background-color: $white;
-//   transition: 0.2s;
-// }
+.c-formContainer,
+.c-form,
+.c-form__toggle {
+  width: 17em;
+  height: 5.25em;
+}
 
-// .c-form {
-//   left: 50%;
-//   transform: translateX(-50%);
-//   padding: 0.625em;
-//   box-sizing: border-box;
-//   box-shadow: 0 0.125em 0.3125em rgba($black, 0.3);
+.c-formContainer {
+  position: relative;
+  font-weight: 700;
+}
 
-//   // position form inputs
-//   display: flex;
-//   justify-content: center;
-// }
+.c-form,
+.c-form__toggle {
+  position: absolute;
+  border-radius: 6.25em;
+  background-color: $white;
+  transition: 0.2s;
+}
 
-// .c-form__toggle {
-//   color: $salmon;
-//   top: 0;
-//   cursor: pointer;
-//   z-index: 1;
+.c-form {
+  left: 12rem;
+  transform: translateX(-50%);
+  padding: 0.625em;
+  box-sizing: border-box;
+  box-shadow: 0 0.125em 0.3125em rgba($black, 0.3);
 
-//   // position message
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
+  // position form inputs
+  display: flex;
+  justify-content: center;
+}
 
-//   &::before {
-//     font-size: 1.75em;
-//     content: attr(data-title);
-//   }
-// }
+.c-form__toggle {
+  color: map-get($colors, secondary);
+  font-family: $poppins;
+  top: 0;
+  cursor: pointer;
+  z-index: 1;
 
-// .c-form__input,
-// .c-form__button {
-//   font: inherit;
-//   border: 0;
-//   outline: 0;
-//   border-radius: 5em;
-//   box-sizing: border-box;
-// }
+  // position message
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-// .c-form__input,
-// .c-form__buttonLabel {
-//   font-size: 1.75em;
-//   opacity: 0;
-//   visibility: hidden;
-//   transform: scale(0.7);
-//   transition: 0s;
-// }
+  &::before {
+    font-size: 1.75em;
+    content: attr(data-title);
+  }
+}
 
-// .c-form__input {
-//   color: $your-pink;
-//   height: 100%;
-//   width: 100%;
-//   padding: 0 0.714em;
+.c-form__input,
+.c-form__button {
+  font: inherit;
+  border: 0;
+  outline: 0;
+  border-radius: 5em;
+  box-sizing: border-box;
+}
 
-//   &::placeholder {
-//     color: currentColor;
-//   }
+.c-form__input,
+.c-form__buttonLabel {
+  font-size: 1.75em;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.7);
+  transition: 0s;
+}
 
-//   &:required:valid {
-//     color: $salmon;
+.c-form__input {
+  color: $your-pink;
+  height: 100%;
+  width: 100%;
+  padding: 0 0.714em;
 
-//     + .c-form__buttonLabel {
-//       color: $white;
+  &::placeholder {
+    color: currentColor;
+  }
 
-//       &::before {
-//         pointer-events: initial;
-//       }
-//     }
-//   }
-// }
+  &:required:valid {
+    color: map-get($colors, p-yellow);
 
-// .c-form__buttonLabel {
-//   color: $cornflower-lilac;
-//   height: 100%;
-//   width: auto;
+    + .c-form__buttonLabel {
+      color: $white;
 
-//   // accepts click events
-//   &::before {
-//     content: "";
-//     position: absolute;
-//     width: 100%;
-//     height: 100%;
-//     pointer-events: none;
-//     cursor: pointer;
-//   }
-// }
+      &::before {
+        pointer-events: initial;
+      }
+    }
+  }
+}
 
-// .c-form__button {
-//   color: inherit;
-//   padding: 0;
-//   height: 100%;
-//   width: 5em;
-//   background-color: $salmon;
-// }
+.c-form__buttonLabel {
+  color: map-get($colors, p-yellow);
+
+  height: 100%;
+  width: auto;
+
+  // accepts click events
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    cursor: pointer;
+  }
+}
+
+.c-form__button {
+  color: inherit;
+  padding: 0;
+  height: 100%;
+  width: 5em;
+  color: map-get($colors, p-yellow);
+}
+.details-container {
+  h3 {
+    font-family: $pt;
+    font-weight: bold;
+    color: #fafafa;
+    text-align: center;
+    font-size: 2rem;
+    @include desktop {
+      width: 50%;
+      font-size: 3rem;
+    }
+  }
+
+  .recipes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    justify-content: space-between;
+    @include desktop {
+      top: 1rem;
+      width: 90%;
+      left: 6rem;
+      height: 85vh;
+    }
+    @include lDesktop {
+      width: 74%;
+      top: 2rem;
+      left: 10rem;
+      height: 84vh;
+    }
+    .healthy,
+    .confort {
+      width: 93%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      @include lDesktop {
+        width: 75%;
+      }
+    }
+    .healthy {
+      align-self: flex-start;
+      flex-direction: row-reverse;
+    }
+    .confort {
+      align-self: flex-end;
+    }
+    img {
+      width: 8rem;
+      border-radius: 51%;
+      @include desktop {
+        width: 15rem;
+      }
+    }
+  }
+}
+#goBack {
+}
