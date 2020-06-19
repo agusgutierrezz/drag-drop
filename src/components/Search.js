@@ -33,7 +33,7 @@ function Search(props) {
             >
               <input
                 className="c-form__input"
-                placeholder="ingredient"
+                placeholder="type here"
                 type="text"
                 name="username"
               />
@@ -45,7 +45,7 @@ function Search(props) {
               <label
                 class="c-form__toggle"
                 htmlFor="checkbox"
-                data-title="Try me!"
+                data-title="Type!"
               ></label>
             </form>
           </div>

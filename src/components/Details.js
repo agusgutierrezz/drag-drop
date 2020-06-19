@@ -26,23 +26,106 @@ const Details = (props) => {
     });
     return param[sortedArray[0][1]];
   };
+  const getPerc = (health, conf) => {
+    let total = (health * 100) / conf;
+    return Math.round(100 - total);
+  };
   let confort = getConfort(items).recipe;
   let healthy = getHealthy(items).recipe;
+  console.log(healthy);
+  let percentage = getPerc(healthy.digest[0].total, confort.digest[0].total);
+  const divStyle = {
+    backgroundImage: "url(" + healthy.image + ")",
+  };
+  const divStyle1 = {
+    backgroundImage: "url(" + confort.image + ")",
+  };
   return (
-    <div className="details-container">
-      <div className="recipes">
-        <div className="healthy">
-          <h3>{healthy.label}</h3>
-          <img src={healthy.image} alt="photo" />
+    <>
+      <div className="container">
+        <div className="card">
+          <div class="social">
+            <h6>
+              This recipe contains
+              <span> {percentage}%</span> less trans and saturated fats
+            </h6>
+          </div>
+          <h2>{healthy.label}</h2>
+
+          <p>HEALTHY</p>
+          <div className="pic" style={divStyle}>
+            {/* <img src={healthy.image} alt="photo" /> */}
+          </div>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+
+          <button>
+            <a href={healthy.url}>GO</a>
+          </button>
         </div>
-        {/* <h3>Receta sana {healthy.digest[0].total}</h3> */}
-        <div className="confort">
-          <h3>{confort.label}</h3>
-          {/* <h3>Receta confort {confort.digest[0].total}</h3> */}
-          <img src={confort.image} alt="photo" />
+        <div className="card card2">
+          <h2>{confort.label}</h2>
+
+          <p>CONFORT</p>
+          <div className="pic" style={divStyle1}>
+            {/* <img src={confort.image} alt="photo" /> */}
+          </div>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+
+          <button>
+            {" "}
+            <a href={confort.url}>GO</a>
+          </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

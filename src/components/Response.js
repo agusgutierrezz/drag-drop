@@ -25,12 +25,16 @@ class Response extends Component {
   handleClick() {}
   render() {
     return (
-      <div>
-        <button id="goBack" onClick={this.props.action}>
-          Go back!
-        </button>
-        {!this.state.isLoaded && <img src={gif} alt="gif" />}
+      <div className="transitions">
+        {!this.state.isLoaded && (
+          <img className="loading" src={gif} alt="gif" />
+        )}
         {this.state.active && <Recipes items={this.state.items} />}
+        {this.state.isLoaded && (
+          <button onClick={this.props.action} id="goBack">
+            Go back!
+          </button>
+        )}
       </div>
     );
   }

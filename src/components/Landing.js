@@ -8,7 +8,7 @@ function Landing(props) {
         <div>
           <h1>What’s for dinner tonight?</h1>
           <p>
-            Tell us the main ingredient, we’ll show you two options: a healthy
+            Type the main ingredient, we’ll show you two options: a healthy
             recipe and a confort one.
           </p>
         </div>
