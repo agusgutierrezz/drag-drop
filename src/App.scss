@@ -8,13 +8,13 @@ $colors: (
 
 $poppins: "Poppins", sans-serif;
 $pt: "PT Serif", serif;
-$desktop: 840px;
+$desktop: 800px;
 @mixin desktop {
   @media (min-width:#{$desktop}) {
     @content;
   }
 }
-$lDesktop: 1500px;
+$lDesktop: 1300px;
 @mixin lDesktop {
   @media (min-width:#{$lDesktop}) {
     @content;
@@ -25,8 +25,6 @@ body {
   position: relative;
   overflow: hidden;
   height: 100%;
-
-  //   background-color: map-get($colors, p-yellow);
   .landing-container {
     height: 100vh;
     display: block;
@@ -55,7 +53,7 @@ body {
   }
   h1 {
     margin: 0;
-    padding-top: 1rem;
+    padding-top: 3rem;
     font-family: $poppins;
     color: map-get($colors, p-yellow);
     font-size: 3rem;
@@ -65,7 +63,7 @@ body {
 
       text-align: start;
       width: 30%;
-      font-size: 4rem;
+      font-size: 3.5rem;
       margin-left: 5rem;
       padding-top: 2rem;
     }
@@ -76,7 +74,7 @@ body {
     }
   }
   p {
-    margin: 1em auto;
+    margin: 0 auto;
     font-size: 1.5rem;
     font-family: $pt;
     text-align: center;
@@ -85,15 +83,15 @@ body {
     font-weight: bold;
     @include desktop {
       color: map-get($colors, secondary);
-
       font-size: 1.5rem;
       text-align: start;
-      width: 30%;
+      width: 40%;
       margin-left: 5rem;
+      margin-top: 1em;
     }
     @include lDesktop {
       margin-left: 10rem;
-      font-size: 2rem;
+      font-size: 1rem;
     }
   }
   .photo-container {
@@ -104,7 +102,7 @@ body {
       background-repeat: no-repeat;
       background-size: cover;
       display: block;
-      width: 30rem;
+      width: 26rem;
       height: 100vh;
       position: absolute;
       right: 0;
@@ -114,4 +112,206 @@ body {
     @include desktop {
     }
   }
+  .search-container {
+    bottom: 2rem;
+    display: block;
+    position: absolute;
+    background-color: rgba(242, 173, 115, 0.7);
+    left: 1.5rem;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 70%;
+    margin: 1rem;
+    @include desktop {
+      width: 50%;
+      left: 11rem;
+      bottom: 9rem;
+    }
+    @include desktop {
+      bottom: 3rem;
+    }
+    h4 {
+      font-family: $poppins;
+      color: map-get($colors, primary);
+      font-weight: bold;
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+      @include desktop {
+        font-size: 1.5rem;
+      }
+    }
+    input,
+    button {
+      display: block;
+      border-radius: 10px;
+      border: 0;
+      padding: 0.5rem;
+      margin: 0 auto;
+    }
+    button {
+      background-color: map-get($colors, primary);
+      width: 8rem;
+      color: map-get($colors, p-yellow);
+      font-family: $poppins;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
 }
+// $black: #000000;
+// $cornflower-lilac: #ffaea9;
+// $salmon: #ff7b73;
+// $white: #ffffff;
+// $your-pink: #ffcccc;
+// .c-checkbox {
+//   display: none;
+
+//   &:checked + .c-formContainer {
+//     .c-form {
+//       width: 37.5em;
+//     }
+
+//     .c-form__toggle {
+//       visibility: hidden;
+//       opacity: 0;
+//       transform: scale(0.7);
+//     }
+
+//     .c-form__input,
+//     .c-form__buttonLabel {
+//       transition: 0.2s 0.1s;
+//       visibility: visible;
+//       opacity: 1;
+//       transform: scale(1);
+//     }
+//   }
+
+//   &:not(:checked),
+//   &:checked {
+//     + .c-formContainer .c-form__input:required:valid ~ .c-form__toggle::before {
+//       content: "Thank You! \1F60A";
+//     }
+//   }
+
+//   &:not(:checked) + .c-formContainer {
+//     .c-form__input:required:valid ~ .c-form__toggle {
+//       pointer-events: none;
+//       cursor: default;
+//     }
+//   }
+// }
+
+// .c-formContainer,
+// .c-form,
+// .c-form__toggle {
+//   width: 20em;
+//   height: 6.25em;
+// }
+
+// .c-formContainer {
+//   position: relative;
+//   font-weight: 700;
+// }
+
+// .c-form,
+// .c-form__toggle {
+//   position: absolute;
+//   border-radius: 6.25em;
+//   background-color: $white;
+//   transition: 0.2s;
+// }
+
+// .c-form {
+//   left: 50%;
+//   transform: translateX(-50%);
+//   padding: 0.625em;
+//   box-sizing: border-box;
+//   box-shadow: 0 0.125em 0.3125em rgba($black, 0.3);
+
+//   // position form inputs
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .c-form__toggle {
+//   color: $salmon;
+//   top: 0;
+//   cursor: pointer;
+//   z-index: 1;
+
+//   // position message
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+
+//   &::before {
+//     font-size: 1.75em;
+//     content: attr(data-title);
+//   }
+// }
+
+// .c-form__input,
+// .c-form__button {
+//   font: inherit;
+//   border: 0;
+//   outline: 0;
+//   border-radius: 5em;
+//   box-sizing: border-box;
+// }
+
+// .c-form__input,
+// .c-form__buttonLabel {
+//   font-size: 1.75em;
+//   opacity: 0;
+//   visibility: hidden;
+//   transform: scale(0.7);
+//   transition: 0s;
+// }
+
+// .c-form__input {
+//   color: $your-pink;
+//   height: 100%;
+//   width: 100%;
+//   padding: 0 0.714em;
+
+//   &::placeholder {
+//     color: currentColor;
+//   }
+
+//   &:required:valid {
+//     color: $salmon;
+
+//     + .c-form__buttonLabel {
+//       color: $white;
+
+//       &::before {
+//         pointer-events: initial;
+//       }
+//     }
+//   }
+// }
+
+// .c-form__buttonLabel {
+//   color: $cornflower-lilac;
+//   height: 100%;
+//   width: auto;
+
+//   // accepts click events
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     pointer-events: none;
+//     cursor: pointer;
+//   }
+// }
+
+// .c-form__button {
+//   color: inherit;
+//   padding: 0;
+//   height: 100%;
+//   width: 5em;
+//   background-color: $salmon;
+// }

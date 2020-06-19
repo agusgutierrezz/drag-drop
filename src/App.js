@@ -7,7 +7,7 @@ function App(props) {
   return (
     <div>
       <Landing />
-      {/* <Search /> */}
+      <Search />
     </div>
   );
 }
