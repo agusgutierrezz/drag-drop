@@ -1,232 +1,189 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Poppins:wght@400;700&display=swap");
+
+$colors: (
+  primary: #472151,
+  secondary: #624185,
+  p-yellow: #ffa345,
+  pastel: #f2ad73,
+);
+$poppins: "Poppins", sans-serif;
+$pt: "PT Serif", serif;
 $desktop: 800px;
 @mixin desktop {
   @media (min-width:#{$desktop}) {
     @content;
   }
 }
-$poppins: "Poppins", sans-serif;
-$pt: "PT Serif", serif;
-$bg-color: #e6e5e1;
-$shdow-gray: #d3d3d5;
-
-$colors: (
-  primary: #472151,
-  secondary: #624185,
-  p-yellow: hsl(30, 100%, 64%),
-  pastel: rgb(242, 173, 115),
-);
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+$lDesktop: 1300px;
+@mixin lDesktop {
+  @media (min-width:#{$lDesktop}) {
+    @content;
+  }
 }
-
-h2 {
-  pointer-events: none;
+$iPad: 1000;
+@mixin iPad {
+  @media (min-width:#{$lDesktop}) {
+    @content;
+  }
 }
-
-body {
-  background-color: $bg-color;
-  width: 100vw;
-  height: 100vh;
-}
-
 .container {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 
+  flex-direction: column;
+  @include desktop {
+    flex-direction: row;
+    align-items: center;
+  }
   .card {
-    position: relative;
-    width: 21rem;
-    height: 13rem;
-    background-color: #fff;
-    overflow: hidden;
-    margin-bottom: 4px;
-    margin-top: 4rem;
+    width: 90%;
+    min-height: 75vh;
     background-color: map-get($colors, pastel);
+    margin: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: map-get($colors, primary);
+    box-shadow: 0 10px 10px -5px;
 
     @include desktop {
-      width: 40rem;
-      margin-top: 4rem;
+      min-height: 30rem;
+      width: 38%;
+    }
+    @include lDesktop {
+      margin-top: 5rem;
+      min-height: 39rem;
+      width: 31%;
+    }
+    .cardText {
+      text-align: center;
+      min-height: 30vh;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-around;
+    }
 
-      height: 18rem;
-    }
-    &:hover {
-      background-color: white;
-    }
-    &:before {
-      content: "";
-      z-index: 99;
-      position: absolute;
-      top: -10px;
-      left: 32px;
-      display: block;
-      width: 16px;
-      height: 16px;
-      border-radius: 16px;
-      background-color: $bg-color;
-    }
-    &:after {
-      content: "";
-      z-index: 99;
-      position: absolute;
-      bottom: -10px;
-      left: 32px;
-      display: block;
-      width: 16px;
-      height: 16px;
-      border-radius: 16px;
-      background-color: $bg-color;
-    }
-    ul {
-      z-index: 99;
-      position: absolute;
-      left: 39px;
-      top: 5px;
-      list-style-type: none;
-      li {
-        width: 2px;
-        height: 2px;
-        border-radius: 2px;
-        margin: 6px 0;
-        background-color: $bg-color;
+    .pic {
+      border-radius: 50%;
+      background-color: map-get($colors, primary);
+      border: 3px inset #624185;
+      width: 45%;
+      height: 22vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include desktop {
+        height: 29vh;
+        width: 48%;
+      }
+      @include lDesktop {
+        height: 32vh;
+        width: 55%;
+        margin-top: 1.5rem;
       }
     }
-    h2 {
-      z-index: 99;
-      font-family: "Poppins", sans-serif;
+    button {
+      border: 0;
+      background-color: map-get($colors, secondary);
+      padding: 0.5rem;
+      border-radius: 5px;
+      justify-self: flex-end;
+      width: 8rem;
+    }
+    a {
+      color: #fafafa;
+      font-family: $poppins;
 
-      position: absolute;
-      bottom: 5rem;
-      right: 78px;
-      font-size: 1.5rem;
-      font-weight: 700;
+      text-decoration: none;
+    }
+
+    h2,
+    h5 {
+      font-family: $poppins;
       color: map-get($colors, primary);
-      background-color: rgba(255, 163, 69, 0.5);
-      border-radius: 10px;
+      font-weight: 500;
+      max-width: 17rem;
+      margin: 1rem;
       text-align: center;
-      width: 65%;
-      @include desktop {
-        right: 130px;
-        font-size: 2.5rem;
+      height: 5rem;
+    }
+    h2 {
+      font-weight: bold;
+    }
+    h5 {
+      color: map-get($colors, p-yellow);
+      height: 3rem;
+      margin: 3rem auto;
+      button {
       }
     }
 
     p {
-      z-index: 99;
-      position: absolute;
-      top: 5px;
-      width: 0rem;
-      right: 62px;
       color: map-get($colors, primary);
-
-      opacity: 0.8;
       font-family: $poppins;
-      font-size: 2rem;
-      letter-spacing: 1px;
-      writing-mode: vertical-lr;
-      -webkit-transition: all 0.2s ease;
-      transition: all 0.2s ease;
-      @include desktop {
-        right: 72px;
-        top: 20px;
-      }
-    }
-    .pic {
-      z-index: 100;
-      width: 17rem;
-      height: 17rem;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      filter: grayscale(10%);
-      @include desktop {
-        width: 35rem;
-        height: 18rem;
-      }
-      img {
-        width: 100%;
-        opacity: 0.7;
-      }
-    }
-    .social {
-      display: none;
-    }
-
-    &:hover .social {
-      display: block;
+      transform: translateX(-50%) translateY(-50%) rotate(-90deg);
       position: absolute;
-      left: 48px;
-      top: 26px;
-      width: 60%;
-      color: map-get($colors, primary);
-      font-size: 4rem;
-      z-index: 2;
-      font-family: $pt;
-      font-weight: bold;
-      background-color: rgba(242, 173, 115, 0.5);
-      border-radius: 10px;
-    }
-    &:hover h2 {
-      display: none;
-    }
-    button {
-      position: absolute;
-      right: 20px;
-      bottom: 3px;
-      width: 33px;
-      height: 32px;
-      background-color: map-get($colors, secondary);
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      outline: none;
-      transition: all 0.3s ease;
-      mix-blend-mode: hard-light;
+      top: 5rem;
+      left: 2rem;
       @include desktop {
-        right: 33px;
-        bottom: 14px;
+        left: -3rem;
+        top: 4rem;
       }
-      a {
-        text-decoration: none;
-        font-family: $poppins;
-
-        color: white;
+      @include lDesktop {
+        left: -8rem;
+        top: 1rem;
       }
-    }
-
-    &:hover button {
-      transform: scale(16.5);
-      a {
-        color: map-get($colors, secondary);
-      }
-    }
-    &:hover p {
-      color: #fff;
-    }
-
-    &:hover .pic {
-      filter: grayscale(90%);
     }
   }
+  .clip {
+    font-size: 3rem;
+    color: map-get($colors, p-yellow);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(10.9% at 2% 98%);
+    transition: clip-path 0.5s ease-in-out;
+    // height: 10;
+    background-color: map-get($colors, primary);
 
-  .card2 {
+    &:hover {
+      clip-path: circle(75%);
+      z-index: 2;
+    }
     button {
-      background-color: map-get($colors, secondary);
+      background-color: map-get($colors, p-yellow);
+      position: absolute;
+      bottom: 1rem;
+      left: 10rem;
+      @include lDesktop {
+        left: 15rem;
+      }
+      a {
+        color: map-get($colors, primary);
+      }
     }
   }
 }
-
-.dr {
+.app {
+}
+.dos {
+  clip-path: polygon(100% 26%, 38% 100%, 100% 100%);
+  bottom: 0rem;
+  right: 0rem;
+  width: 90%;
+  height: 42rem;
+  background-color: #472151;
+  z-index: -1;
   position: absolute;
-  bottom: 16px;
-  right: 16px;
-  width: 100px;
+}
+.transitions {
+  width: 100%;
+  height: 100vh;
 }

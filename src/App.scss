@@ -24,8 +24,8 @@ $lDesktop: 1300px;
 body {
   margin: 0;
   position: relative;
-  overflow: hidden;
-  height: 100%;
+
+  height: 100vh;
   background-color: map-get($colors, p-yellow);
 
   .landing-container {
@@ -95,6 +95,7 @@ body {
     @include lDesktop {
       margin-left: 10rem;
       font-size: 2rem;
+      width: 58%;
     }
   }
   .photo-container {
@@ -122,11 +123,12 @@ body {
 
     @include desktop {
       width: 50%;
-      left: 11rem;
-      bottom: 12rem;
+      left: 2rem;
+      bottom: 9rem;
     }
-    @include desktop {
-      bottom: 5rem;
+    @include lDesktop {
+      left: 8rem;
+      bottom: 6rem;
     }
   }
 }
@@ -364,19 +366,25 @@ $your-pink: #624185;
     background-color: map-get($colors, secondary);
     color: map-get($colors, pastel);
   }
-  @include desktop {
-    position: absolute;
-    right: 2rem;
-    top: 40rem;
-  }
-  @include lDesktop {
-    left: 2rem;
-    top: 50rem;
-  }
 }
 .transitions {
   img {
     display: block;
     margin: 10rem auto;
+  }
+}
+.error {
+  display: block;
+  margin: 0 auto;
+  padding-top: 5rem;
+  h1,
+  h6 {
+    text-align: center;
+    width: 100%;
+    color: #fafafa;
+    margin: 0;
+  }
+  h6 {
+    font-size: 2rem;
   }
 }

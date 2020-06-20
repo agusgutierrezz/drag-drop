@@ -44,85 +44,35 @@ const Details = (props) => {
     <>
       <div className="container">
         <div className="card">
-          <div class="social">
-            <h6>
-              This recipe contains
-              <span> {percentage}%</span> less trans and saturated fats
-            </h6>
-          </div>
-          <h2>{healthy.label}</h2>
-
+          <div className="pic" style={divStyle}></div>
           <p>HEALTHY</p>
-          <div className="pic" style={divStyle}>
-            {/* <img src={healthy.image} alt="photo" /> */}
+          <div className="cardText">
+            <h2>{healthy.label}</h2>
+            <button>
+              <a href={healthy.url}>See the recipe!</a>
+            </button>
           </div>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-
-          <button>
-            <a href={healthy.url}>GO</a>
-          </button>
-        </div>
-        <div className="card card2">
-          <h2>{confort.label}</h2>
-
-          <p>CONFORT</p>
-          <div className="pic" style={divStyle1}>
-            {/* <img src={confort.image} alt="photo" /> */}
-          </div>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-
-          <button>
+          <div className="clip">
             {" "}
-            <a href={confort.url}>GO</a>
-          </button>
+            <h5>
+              This recipe contains
+              <span> {percentage}%</span> less trans and saturated fats.
+            </h5>
+            <button>
+              <a href={healthy.url}>See the recipe!</a>
+            </button>
+          </div>
+        </div>
+
+        <div className="card ">
+          <div className="pic" style={divStyle1}></div>
+          <p>CONFORT</p>
+          <div className="cardText">
+            <h2>{confort.label}</h2>
+            <button>
+              <a href={confort.url}>See the recipe!</a>
+            </button>
+          </div>
         </div>
       </div>
     </>

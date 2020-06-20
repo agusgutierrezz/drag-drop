@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Recipes from "./Recipes";
 import gif from "../gif.gif";
-import Search from "./Search";
+
 class Response extends Component {
   state = {
     items: [],
@@ -26,6 +26,9 @@ class Response extends Component {
   render() {
     return (
       <div className="transitions">
+        <div className="app"></div>
+        <div className="dos"></div>
+
         {!this.state.isLoaded && (
           <img className="loading" src={gif} alt="gif" />
         )}
